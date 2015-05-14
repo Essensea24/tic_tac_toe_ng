@@ -26,8 +26,9 @@
 		
 		</header>
 
-		<div id="refreshButton"><button>Refresh</button></div>
+		
 		<main ng-controller = "TicTacToeController as gameCtrl">
+			<button ng-click= "gameCtrl.clearBoard()">Refresh</button>
 			<div class = "chartBox" ng-repeat = "boxes in gameCtrl.addBox">
 					
 			<button class= "box" ng-class="boxes.select" ng-click="gameCtrl.boxClick($index)">{{boxes.select}}</button>

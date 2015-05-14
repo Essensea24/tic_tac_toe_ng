@@ -13,16 +13,18 @@ angular
  	self.player2 = "o";
  	self.turn = "o";
  	self.addBox = getBox();
+ 	//$loaded is an event listener that only run the loop when firebase data is loaded. 
  	self.addBox.$loaded( function () {
+ 		//set a for loop to add boxes if the number of box is less than 9, then stop at 9 boxes
  		if (self.addBox.length <9 ){
  			for (var i=0; i<9; i++) {
+ 				//set addBox.select to an empty string
  				self.addBox.$add({select: ""});
  			} 
 
  		}
  	});
 
- 
 
  	function getBox() {
  		var ref = new Firebase("https://dailytictactoe.firebaseio.com/");
@@ -42,9 +44,21 @@ angular
  			console.log(self.addBox[e].select);
  			self.turn = "o";
  			console.log("next is " + self.turn + " turn");
+ 			self.addBox.$save(e);
  		} else {
  			null
  		}
  	}
+
+ 	self.clearBoard = clearBoard;
+ 	//set select value to ""
+ 	function clearBoard(){
+ 		for(var i =0; i<9; i++) {
+ 			self.addBox[i].select = "";
+ 			self.addBox.$save(i);
+ 		}
+ 
+ 	}
  }
+
 
