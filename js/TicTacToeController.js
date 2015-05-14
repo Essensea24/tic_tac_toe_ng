@@ -5,18 +5,46 @@ angular
  TicTacToeController.$inject = ['$firebaseArray'];
 
 
- function TicTacToeController() {
+ function TicTacToeController($firebaseArray) {
  	var self = this;
- 	self.boxList = [
- 	{box:1, select: false},
- 	{box:2, select: false},
- 	{box:3, select: false},
- 	{box:4, select: false},
- 	{box:5, select: false},
- 	{box:6, select: false},
- 	{box:7, select: false},
- 	{box:8, select: false},
- 	{box:9, select: false}
 
- 	]
+ 	self.boxClick= boxClick;
+ 	self.player1 = "x";
+ 	self.player2 = "o";
+ 	self.turn = "o";
+ 	self.addBox = getBox();
+ 	self.addBox.$loaded( function () {
+ 		if (self.addBox.length <9 ){
+ 			for (var i=0; i<9; i++) {
+ 				self.addBox.$add({select: ""});
+ 			} 
+
+ 		}
+ 	});
+
+ 
+
+ 	function getBox() {
+ 		var ref = new Firebase("https://dailytictactoe.firebaseio.com/");
+ 		var box = $firebaseArray(ref);
+ 		return box 
+ 	}
+
+ 	function boxClick(e) {
+ 		if (self.addBox[e].select== "" && self.turn == "o") {
+ 			self.addBox[e].select = self.player1;
+ 			console.log(self.addBox[e].select);
+ 			self.turn = "x";
+ 			console.log("next is " + self.turn + " turn");
+ 			self.addBox.$save(e);
+ 		} else if (self.addBox[e].select== "" && self.turn == "x") {
+ 			self.addBox[e].select = self.player2;
+ 			console.log(self.addBox[e].select);
+ 			self.turn = "o";
+ 			console.log("next is " + self.turn + " turn");
+ 		} else {
+ 			null
+ 		}
+ 	}
  }
+

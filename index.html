@@ -4,13 +4,16 @@
 		<meta charset="utf-8">
 		<title>Dialy Tic Tac Toe</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+		<script type="text/javascript" src = "js/angular.js"></script>
+		<script type="text/javascript" src="js/firebase.js"></script>
+		<script type="text/javascript" src="js/angularfire.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
 		<script type="text/javascript" src="js/TicTacToeController.js"></script>
 
 	</head>
 
 	<body ng-app = "tictactoeApp">
-
 
 		<header>
 				<div class = "gameLogo">
@@ -25,9 +28,9 @@
 
 		<div id="refreshButton"><button>Refresh</button></div>
 		<main ng-controller = "TicTacToeController as gameCtrl">
-			<div class = "chartBox" ng-repeat = "boxes in gameCtrl.boxList">
+			<div class = "chartBox" ng-repeat = "boxes in gameCtrl.addBox">
 					
-			<button id = "box" ng-click = "">{{boxes.box}}</button>
+			<button class= "box" ng-class="boxes.select" ng-click="gameCtrl.boxClick($index)">{{boxes.select}}</button>
 
 			</div>
 			
