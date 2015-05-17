@@ -1,97 +1,218 @@
-
 HEADER {
+	width: 100%;
+	height: 150px;
 	display: inline-block;
-	width: 90%;	
-	text-align: center;
-	margin-left: 5%;
-	margin-right:5%;
-	/*border-bottom: 5px solid black;*/
+	border-bottom: 10px double black;
 }
 
-#gameNameOne {
-	color:red;
-	margin-top: 10px;
-}
-
-#gameNameTwo {
-	color: black;
-	margin-top: -5px;
-}
-
-#gameNameThree {
-	color: grey;
-	margin-top: -10px;
-}
-
-.xlogo {
-	background-image: url("../images/x.png");
-	width: 100px;
-	height: 100px;
-	float: right;
-	margin-right: 33%;
-	border: 32px solid black;
-	margin-bottom: 1%;
-	border-radius: 10%;
-}
-
-.headerBorder:hover {
-	border: 32px solid red;
+.headerOne{
+	float: left;
+	height: 200px;
+	width: 28%;
+	border-right: 10px double red;
 }
 
 
 .gameLogo {
 	background: url("../images/grid.png") center;
-	width: 100px;
-	height: 100px;
+	width: 80px;
+	height: 80px;
 	border-radius: 50%;
-	border: 32px solid red;
+	border: 28px solid red;
 	float: left; 
-	margin-left: 33%;
-	margin-bottom: 1%;
+	margin-left: 20px;
+	margin-top: 6px;
 }
 
 .gameLogo:hover {
-	border: 32px solid black;
+	border: 28px solid black;
+}
+
+#gameNameOne, #gameNameTwo, #gameNameThree {
+	margin-left: 26px;
+}
+
+#gameNameOne {
+	color:red;
+	margin-top: 6px;
+}
+	
+
+#gameNameTwo {
+	color: black;
+	margin-top: -10px;
+	
+}
+
+#gameNameThree {
+	color: grey;
+	margin-top: -12px;
+}
+
+.xlogo {
+	background-image: url("../images/x.png");
+	width: 80px;
+	height: 80px;
+	float: left;
+	border: 28px solid black;
+	border-radius: 10%;
+	margin-left: 10px;
+	margin-top: 6px;
+}
+
+.xlogo:hover {
+	border: 28px solid red;
+}
+
+.headerTwo{
+	float: left;
+	width: 70%;
+	height: 150px;
+}
+
+#headerTwoTop {
+	width: 80%;
+	height: 40px;
+	margin: 1% auto;
+	text-align: center;
+}
+
+#headerTwoBottom {
+	width: 80%;
+	height: 100px;
+	text-align: center;
+	display: inline-block;
+	margin-left: 10%;
+}
+
+#playerOne {
+	width: 40%;
+	height: 20px;
+	float: left;
+	margin-top: 10px;
+}
+
+#score1 {
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	color: white;
+}
+#score2 {
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	background-size: 40px;
+	border: 2px double white;
+	color: white;
+}
+
+#playerTwo {
+	width: 40%;
+	height: 30px;
+	float: right;
+	margin-top: 10px;
+
 }
 
 MAIN {
-	width: 600px;
-	height: 500px;
-	margin: 0 auto;
+	display: inline-block;
+}
+
+#boardGame {
+	width: 800px;
+	height: 520px;
+	border-right: 10px double red;
+	margin-top: -60px;
+	float: left;
+	display: inline-block;
+}
+
+#emptyDiv {
+	height:100px;
+	width: 40%;
+}
+
+MAIN {
+	display: inline-block;
+}
+
+SECTION {
+	width: 70%;
+	display: inline-block;
+}
+
+#reset {
+	width: 300px;
+	height: 450px;
+	float: left;
+}
+
+#clearButton {
+	width: 140px;
+	height: 140px;
+	background-color: white;
+	border: 20px double black;
+	margin-left: 20%;
+	margin-top: 10%;
+
+}
+
+#resetButton {
+	width: 140px;
+	height: 140px;
+	background-color: red;
+	border: 20px double white;
+	margin-left: 20%;
+	color: black;
+	border-radius: 50%;
+	margin-top: 20%;
+
 }
 
 .chartBox {
-	width: 40%;
-	height: 600px;
-	display: inline;
-	margin: 0 auto;
+	width: 450px;
+	height: 450px;
+	display: inline-block;
 }
 
 
 .box {
 	vertical-align: top;
 	display: inline-block;
-	width: 150px;
-	height: 150px;
-	border: 5px black;
-	border-style: double;
+	width: 140px;
+	height: 140px;
+	border: 10px double black;
 	cursor: pointer;
+	float: left;
+	background-color: white;
 }
 
 .x {
-	width: 150px;
-	height: 150px;
-	background-color: red;
+	width: 140px;
+	height: 140px;
+	background-color: black;
  	vertical-align: center;
+ 	vertical-align: top;
+ 	border: 20px double white;
 }
 
 .o {
-	width: 150px;
-	height: 150px;
-	background-color: blue;
+	width: 140px;
+	height: 140px;
+	background-color: red;
  	vertical-align: center;
+ 	vertical-align: top;
+ 	border: 20px double white;
+ 	border-radius: 50%;
 }
 
+ASIDE {
+	width: 30px;
 
+}
 
-
+#scoreBoard {
+	width: 25%;
+	float:left;
+}

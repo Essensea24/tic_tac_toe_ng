@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app = "tictactoeApp">
 	<head>
 		<meta charset="utf-8">
 		<title>Dialy Tic Tac Toe</title>
@@ -13,33 +13,53 @@
 
 	</head>
 
-	<body ng-app = "tictactoeApp">
+	<body ng-controller = "TicTacToeController as gameCtrl">
 
 		<header>
+			<div  class = "headerOne">
 				<div class = "gameLogo">
 					<h5 id= "gameNameOne">Tic.</h5>
 					<h5 id= "gameNameTwo">Tac.</h5>
 					<h5 id= "gameNameThree">Toe.</h5>
 				</div>
 				<div class = "xlogo"></div>
-
+			</div>
+			<div class = "headerTwo">
+				<aside id = "headerTwoTop">
+					<h3>{{gameCtrl.game[0].message}}</h3>
+				</aside>
+				<aside id = "headerTwoBottom">
+					<div id = "playerOne">
+						<span>Player 1 Score:</span>
+						<span id = "score1">{{gameCtrl.game[0].player1Score}}</span>
+					</div>
+					<div id = "playerTwo">
+						<span>Player 2 Score:</span>
+						<span id = "score2">{{gameCtrl.game[0].player2Score}}</span>
+						</div>
+				</aside>
+			</div>
+		
 		
 		</header>
-
 		
-		<main ng-controller = "TicTacToeController as gameCtrl">
-			<button ng-click= "gameCtrl.clearBoard()">Clear Board</button>
-			<button ng-click = "gameCtrl.scoreReset()">Reset Score
-			
-			<div class = "chartBox">
+		<main >
+
+			<section id = "boardGame">
+				<div id = "emptyDiv"></div>	
+				<div id = "reset">
+					<button id = "resetButton" ng-click = "gameCtrl.scoreReset()">Reset Score</button>
+					<button id = "clearButton" ng-click= "gameCtrl.clearBoard()">Clear Board</button><br>
 					
-				<button class= "box" ng-repeat = "boxes in gameCtrl.grid" ng-class="boxes.select" ng-click="gameCtrl.boxClick($index)"></button>
+				</div>
 
-			</div>
-			
-
-			
-
+				<div class = "chartBox">
+					<button class= "box" ng-repeat = "boxes in gameCtrl.grid" ng-class="boxes.select" ng-click="gameCtrl.boxClick($index)"></button>
+				</div>
+				
+			</section>
+			<aside id = "chatBoard">
+			</aside>
 		</main>
 
 

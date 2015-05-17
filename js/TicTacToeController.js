@@ -12,11 +12,16 @@ angular
  	self.clearBoard = clearBoard;
  	self.getWinner = getWinner;
  	self.scoreReset = scoreReset;
+ 	self.setTimeOut = setTimeOut;
 
  	
 
  	//$loaded is an event listener that only run the loop when firebase data is loaded. 
- 
+ 	
+ 	function setTimeOut() {
+ 		var timeOut = setTimeout(clearBoard, 2000);
+ 	}
+ 	
 
  	function getBox() {
  		var ref = new Firebase("https://dailytictactoe.firebaseio.com/Grid");
@@ -31,17 +36,26 @@ angular
 
  	}
 
+
+
  	function clearBoard() {
- 			self.game[0].turn = 0
+ 			self.game[0].turn = 1
+ 			self.game[0].message = "";
+ 			self.game[0].winner = false;
  			self.game.$save(self.game[0]);
  		for(var i =0; i<9; i++) {
  			self.grid[i].select = "empty";
  			self.grid.$save(i);
+
 		}
  	}
 
  	function scoreReset() {
- 		self.game[0].turn = 0
+ 		self.game[0].player1Score = 0;
+ 		self.game[0].player2Score = 0;
+ 		self.game[0].turn = 1;
+ 		self.game[0].winner = false;
+ 		self.game[0].message = "";
  		self.game.$save(self.game[0]);
  		for(var i =0; i<9; i++) {
  			self.grid[i].select = "empty";
@@ -51,23 +65,25 @@ angular
 
 
  	function boxClick(i) {
- 		if (self.grid[i].select == 'empty' 
- 			&& self.game[0].turn % 2 == 1) {
-	 			self.grid[i].select = 'x';
-	 			self.game[0].turn++;
-	 			self.grid.$save(i)
-				self.game.$save(self.game[0]);
-				
- 		} else if (self.grid[i].select == 'empty' 
- 			&& self.game[0].turn % 2 == 0) {
- 				self.grid[i].select = 'o';
- 				self.game[0].turn++;
- 				self.grid.$save(i)
-				self.game.$save(self.game[0]);
- 		} else {
- 			null
+ 		if (self.game[0].turn<9 && self.game[0].winner == false){
+	 		if (self.grid[i].select == 'empty' 
+	 			&& self.game[0].turn % 2 == 1) {
+		 			self.grid[i].select = 'x';
+		 			self.game[0].turn++;
+		 			self.grid.$save(i)
+					self.game.$save(self.game[0]);
+					
+	 		} else if (self.grid[i].select == 'empty' 
+	 			&& self.game[0].turn % 2 == 0) {
+	 				self.grid[i].select = 'o';
+	 				self.game[0].turn++;
+	 				self.grid.$save(i)
+					self.game.$save(self.game[0]);
+	 		} else {
+	 			null
+ 			}
+ 			getWinner();
  		}
-		getWinner();
  	}
 
  	function getWinner() {
@@ -88,25 +104,29 @@ angular
  				for (var j = 0; j < winners.length ; j++) {
  					var w = winners[j]; //winner j row
  					if (self.grid[ w[0] ].select === t && self.grid[ w[1] ].select === t && self.grid[ w[2] ].select==t) {
- 						console.log(t + "won")
- 						if (t = "x") {
+ 						if (t == "x") {
  							self.game[0].player1Score++;
- 							self.game.$save(self.game[0]);
- 						} else {
+ 							self.game[0].winner = true;
+ 							self.game[0].message = "Player 1 Won";
+ 							// setTimeOut();
+ 						} else if (t == "o") {
  							self.game[0].player2Score++;
- 							self.game.$save(self.game[0]);
+ 							self.game[0].winner = true;
+ 							self.game[0].message = "Player 2 Won";
+ 							// setTimeOut();
  						} 
- 					}else if (self.grid[ w[0] ].select != t || self.grid[ w[1] ].select != t || self.grid[ w[2] ] != t) {
- 						console.log("next player please!");
- 					} else {
- 						console.log("its a tie");
+ 					} else if (self.game[0].turn == 10) {
+ 						self.game[0].message = "It is a tie!"
  					}
+ 					self.game.$save(self.game[0])
  				}
  		}
+
  	}
 
 
 }
+
 
 
 
