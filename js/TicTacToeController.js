@@ -13,13 +13,36 @@ angular
  	self.getWinner = getWinner;
  	self.scoreReset = scoreReset;
  	self.setTimeOut = setTimeOut;
+ 	// self.getChat = getChat
+ 	// self.addChat = addChat;
 
- 	
+ 	// function addChat() {
+ 	// 	alert("addchat is running")
+ 	// 	self.chatBox[0].text = "hi";
+ 	// 	self.game.$save(self.game[0]);
+ 	// 	self.game[0].chat.text.$add({text: self.game[0].chat});
+ 	// }	
+
+ 	// function addTodo(){
+  //           self.todos.$add({task: self.text, done: false});
+  //           self.text = null;
+    
+  //       }
+
+
 
  	//$loaded is an event listener that only run the loop when firebase data is loaded. 
  	
  	function setTimeOut() {
  		var timeOut = setTimeout(clearBoard, 2000);
+
+ 	}
+
+ 	function getChat(){
+ 		var ref = new Firebase("https://dailytictactoe.firebaseio.com/chatBox")
+ 		var chatBox = $firebaseArray(ref);
+ 		return chatbox;
+ 		
  	}
  	
 
@@ -39,7 +62,7 @@ angular
 
 
  	function clearBoard() {
- 			self.game[0].turn = 1
+ 			self.game[0].turn = 0
  			self.game[0].message = "";
  			self.game[0].winner = false;
  			self.game.$save(self.game[0]);
@@ -53,7 +76,7 @@ angular
  	function scoreReset() {
  		self.game[0].player1Score = 0;
  		self.game[0].player2Score = 0;
- 		self.game[0].turn = 1;
+ 		self.game[0].turn = 0;
  		self.game[0].winner = false;
  		self.game[0].message = "";
  		self.game.$save(self.game[0]);
@@ -65,16 +88,16 @@ angular
 
 
  	function boxClick(i) {
- 		if (self.game[0].turn<9 && self.game[0].winner == false){
+ 		if (self.game[0].turn <= 9 && self.game[0].winner == false){
 	 		if (self.grid[i].select == 'empty' 
-	 			&& self.game[0].turn % 2 == 1) {
+	 			&& self.game[0].turn % 2 == 0) {
 		 			self.grid[i].select = 'x';
 		 			self.game[0].turn++;
 		 			self.grid.$save(i)
 					self.game.$save(self.game[0]);
 					
 	 		} else if (self.grid[i].select == 'empty' 
-	 			&& self.game[0].turn % 2 == 0) {
+	 			&& self.game[0].turn % 2 == 1) {
 	 				self.grid[i].select = 'o';
 	 				self.game[0].turn++;
 	 				self.grid.$save(i)
@@ -91,7 +114,7 @@ angular
  		var winners = [
  			[0, 1, 2],
  			[3, 4, 5],
- 			[5, 7, 8],
+ 			[6, 7, 8],
  			[0, 3, 6],
  			[1, 4, 7],
  			[2, 5, 8],
@@ -107,15 +130,15 @@ angular
  						if (t == "x") {
  							self.game[0].player1Score++;
  							self.game[0].winner = true;
- 							self.game[0].message = "Player 1 Won";
+ 							self.game[0].message = "Player 1 Won!";
  							// setTimeOut();
  						} else if (t == "o") {
  							self.game[0].player2Score++;
+ 							self.game[0].message = "Player 2 Won!";
  							self.game[0].winner = true;
- 							self.game[0].message = "Player 2 Won";
  							// setTimeOut();
  						} 
- 					} else if (self.game[0].turn == 10) {
+ 					} else if (self.game[0].turn === 9) {
  						self.game[0].message = "It is a tie!"
  					}
  					self.game.$save(self.game[0])
@@ -126,6 +149,8 @@ angular
 
 
 }
+
+
 
 
 

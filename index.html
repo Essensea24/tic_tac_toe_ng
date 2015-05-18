@@ -16,49 +16,54 @@
 	<body ng-controller = "TicTacToeController as gameCtrl">
 
 		<header>
-			<div  class = "headerOne">
+			<section  class = "headerOne">
 				<div class = "gameLogo">
 					<h5 id= "gameNameOne">Tic.</h5>
 					<h5 id= "gameNameTwo">Tac.</h5>
 					<h5 id= "gameNameThree">Toe.</h5>
 				</div>
 				<div class = "xlogo"></div>
-			</div>
-			<div class = "headerTwo">
-				<aside id = "headerTwoTop">
-					<h3>{{gameCtrl.game[0].message}}</h3>
-				</aside>
-				<aside id = "headerTwoBottom">
-					<div id = "playerOne">
-						<span>Player 1 Score:</span>
-						<span id = "score1">{{gameCtrl.game[0].player1Score}}</span>
-					</div>
-					<div id = "playerTwo">
-						<span>Player 2 Score:</span>
-						<span id = "score2">{{gameCtrl.game[0].player2Score}}</span>
-						</div>
-				</aside>
-			</div>
-		
+			</section>
+			<section class = "headerTwo">
+				<span class = "one"><h3>Player One</h3><h1>{{gameCtrl.game[0].player1Score}}</h1></span>
+				<span class = "two"><h3>Player Two</h3><h1>{{gameCtrl.game[0].player2Score}}</h1></span>
+
+			</section>
 		
 		</header>
 		
-		<main >
+		<main>
 
 			<section id = "boardGame">
-				<div id = "emptyDiv"></div>	
-				<div id = "reset">
-					<button id = "resetButton" ng-click = "gameCtrl.scoreReset()">Reset Score</button>
-					<button id = "clearButton" ng-click= "gameCtrl.clearBoard()">Clear Board</button><br>
+				
+				<div id = "info">
+					<aside id = "winner">
+					<h2>{{gameCtrl.game[0].message}}</h2>
+					</aside>
+					<div class = "reset">
+					<button id = "resetButton" ng-click = "gameCtrl.scoreReset()"><h2>Reset Score</h2></button>
+					<button id = "clearButton" ng-click= "gameCtrl.clearBoard()"><h2>Clear Board</button></h2>
+					</div>
 					
 				</div>
+
 
 				<div class = "chartBox">
 					<button class= "box" ng-repeat = "boxes in gameCtrl.grid" ng-class="boxes.select" ng-click="gameCtrl.boxClick($index)"></button>
 				</div>
 				
 			</section>
-			<aside id = "chatBoard">
+
+			<aside id = "chatWindow">
+				<span class = "chatTittle"><h1>Welcome</h1></span>
+				<ul class = "chatBody">
+						<!-- <li ng-repeat="chats in gameCtrl.game[0].chat[0]">{{chats.text}}</li> -->		
+				</ul>
+				<!-- <form class="add-chat" ng-submit="gameCtrl.addChat()">
+					<input class="text-box" type="text" placeholder="Enter your texts.." ng-model="gameCtrl.game[0].chat[0].text">
+					<input type="submit" class="btn-add" value="Send">
+				</form> -->
+				
 			</aside>
 		</main>
 
