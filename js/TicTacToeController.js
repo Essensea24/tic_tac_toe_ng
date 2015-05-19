@@ -13,36 +13,15 @@ angular
  	self.getWinner = getWinner;
  	self.scoreReset = scoreReset;
  	self.setTimeOut = setTimeOut;
- 	// self.getChat = getChat
- 	// self.addChat = addChat;
-
- 	// function addChat() {
- 	// 	alert("addchat is running")
- 	// 	self.chatBox[0].text = "hi";
- 	// 	self.game.$save(self.game[0]);
- 	// 	self.game[0].chat.text.$add({text: self.game[0].chat});
- 	// }	
-
- 	// function addTodo(){
-  //           self.todos.$add({task: self.text, done: false});
-  //           self.text = null;
-    
-  //       }
 
 
 
- 	//$loaded is an event listener that only run the loop when firebase data is loaded. 
+
  	
+ 	//set a time out function to clear the game board after 2 seconds when there is a winner
  	function setTimeOut() {
  		var timeOut = setTimeout(clearBoard, 2000);
 
- 	}
-
- 	function getChat(){
- 		var ref = new Firebase("https://dailytictactoe.firebaseio.com/chatBox")
- 		var chatBox = $firebaseArray(ref);
- 		return chatbox;
- 		
  	}
  	
 
@@ -60,7 +39,7 @@ angular
  	}
 
 
-
+ 	//clearboard function to empty all boxes and turn to zero
  	function clearBoard() {
  			self.game[0].turn = 0
  			self.game[0].message = "";
@@ -73,6 +52,8 @@ angular
 		}
  	}
 
+
+ 	//scoreReset function to empty all boxes and score
  	function scoreReset() {
  		self.game[0].player1Score = 0;
  		self.game[0].player2Score = 0;
@@ -86,7 +67,7 @@ angular
  		}
  	}
 
-
+ 	
  	function boxClick(i) {
  		if (self.game[0].turn <= 9 && self.game[0].winner == false){
 	 		if (self.grid[i].select == 'empty' 
@@ -131,12 +112,12 @@ angular
  							self.game[0].player1Score++;
  							self.game[0].winner = true;
  							self.game[0].message = "Player 1 Won!";
- 							// setTimeOut();
+ 							setTimeOut();
  						} else if (t == "o") {
  							self.game[0].player2Score++;
  							self.game[0].message = "Player 2 Won!";
  							self.game[0].winner = true;
- 							// setTimeOut();
+ 							setTimeOut();
  						} 
  					} else if (self.game[0].turn === 9) {
  						self.game[0].message = "It is a tie!"
