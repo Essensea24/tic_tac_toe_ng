@@ -4,13 +4,15 @@ HEADER {
 	display: inline-block;
 }
 
+.row {
+	width: 100%;
+}
+
 .headerOne{
 	height: 100px;
 	width: 50%;
-	border-right: 3px solid #DE1B1B;
-	border-bottom: 3px solid #DE1B1B;
-	margin-left: 8px;
 	text-align: center;
+	margin-top: 3%;
 }
 
 div.xlogo {
@@ -59,25 +61,21 @@ div.gridlogo {
 
 
 .headerTwo{
-	float: left;
+	margin-top: 2%;
 	width: 50%;
-	height: 150px;
-	display: inline-block;
-	background: url('../images/background1.png');
-	margin-right: -40px;
-	border-bottom: 10px solid black;
+	height: 100px;
+	background-color: #E9E581;
 }
 
 
 .one {
 	width: 100px;
 	height: 100px;
-	float: left;
-	border: 20px double #831618 ;
 	text-align: center;
-	margin-left: 10%;
-	margin-top: 5px;
-	color: black;
+	color: #F6F6F6;
+	margin-top: 4%;
+	margin-left: 6%;
+
 
 
 }
@@ -85,14 +83,20 @@ div.gridlogo {
 .two {
 	width: 100px;
 	height: 100px;
-	float: left;
-	border: 20px double #831618 ;
-	border-radius: 50%;
-	margin-bottom: 10px;
+	margin-top: 4%;
+	margin-left: 20%;
 	text-align: center;
-	margin-left: 10%;
-	margin-top: 5px;
-	color: black;
+	color: #F6F6F6;
+
+}
+
+strong {
+	color: #DE1B1B;
+}
+
+.empty {
+	width: 100%;
+	border-bottom: 1px black solid;
 }
 
 
@@ -245,5 +249,18 @@ SECTION {
 	background-image: url('../images/miss_olivia.png');
 	background-repeat: no-repeat;
 	background-position: center;
+
+}
+
+@media screen and (max-width: 768px) {
+
+	section.headerOne {
+		margin-top: 4%;
+	}
+	section.headerTwo{
+	width: 110%;
+	height: 100px;
+	background-color: #E9E581;
+	}
 
 }
