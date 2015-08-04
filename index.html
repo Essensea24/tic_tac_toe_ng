@@ -42,12 +42,15 @@
 		<main class="row">
 				
 			<div id = "info" class="col-md-2 col-xs-12">
-				<div id = "winner">
-				<h2>{{gameCtrl.game[0].message}}</h2>
+				<div id = "winner" class=" col-md-12 col=xs-4">
+				<h4>{{gameCtrl.game[0].message}}</h4>
 				</div>
-				
-				<button id = "resetButton" ng-click = "gameCtrl.scoreReset()"><h2>Reset Score</h2></button>
-				<button id = "clearButton" ng-click= "gameCtrl.clearBoard()"><h2>Clear Board</button></h2>
+				<div class="col-md-12 col-xs-4">
+				<button class=" reset btn btn-default" ng-click = "gameCtrl.scoreReset()"><h5>Reset Score</h5></button>
+				</div>
+
+				<div class="col-md-12 col-xs-4">
+				<button class = "clear btn btn-default col-md-4 col=xs-4" ng-click= "gameCtrl.clearBoard()"><h5>Clear Board</button></h5>
 				</div>
 				
 			</div>
@@ -60,13 +63,13 @@
 			</div>
 				
 
-			<div class = "chatWindow col-md-2 col-xs-12">
+			<!-- <div class = "chatWindow col-md-2 col-xs-12">
 				<span class = "chatTittle"><h1>Welcome</h1></span>
 				<ul class = "chatBody">
 						
 				</ul>
 				
-			</div>
+			</div> -->
 		</main>
 
 

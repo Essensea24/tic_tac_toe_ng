@@ -1,8 +1,3 @@
-HEADER {
-	width: 100%;
-	height: 150px;
-	display: inline-block;
-}
 
 .headerOne{
 	height: 100px;
@@ -56,7 +51,7 @@ div.gridlogo {
 
 .headerTwo{
 	margin-top: 2%;
-	width: 50%;
+	width: 100%;
 	height: 100px;
 	background-color: #E9E581;
 }
@@ -103,19 +98,18 @@ div.boardGame {
 	width: 50%;
 	height: 500px;
 	display: inline-block;
-	margin-left: 5%;
+	margin-left: 15%;
 	margin-top: 5%;
 }
 
 
 #info {
 	width: 20%;
-	height: 505px;
+	height: 400px;
 	float: left;
-	margin-top: 5px;
-	margin-left: 8px;
-	margin-right: -10px;
-	background-color:#DE1B1B;
+	margin-top: 3%;
+	margin-left: 10%;
+	background-color:#404040;
 }
 
 #winner {
@@ -125,36 +119,10 @@ div.boardGame {
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 10px;
-	border-bottom: 10px solid black;
-	background-color: black;
-	color: white;
+	background-color: white;
+	color: #B71427;
 }
 
-#clearButton {
-	width: 120px;
-	height: 120px;
-	background-color: #D2D2D3;
-	border: 10px solid #831618;
-	border-radius: 10%;
-	margin-left: 30%;
-	margin-top: 10%;
-	cursor: pointer;
-	color: #831618;
-
-}
-
-#resetButton {
-	width: 120px;
-	height: 120px;
-	background-color: black;
-	border: 10px solid #831618;
-	margin-left: 30%;
-	color: #831618;
-	border-radius: 50%;
-	margin-top: 20%;
-	cursor: pointer;
-
-}
 
 #game {
 	width: 60%;
@@ -167,7 +135,6 @@ div.boardGame {
 	width: 85px;
 	height: 85px;
 	cursor: pointer;
-	float: left;
 	background-color:black;
 	border: 20px double white;
 	border-color: white;
@@ -183,17 +150,17 @@ div.boardGame {
 	border-radius: 10%;
  	vertical-align: center;
  	vertical-align: top;
- 	border: 30px double #831618;
- 	background-color: #D2D2D3;
+ 	border: 10px #B71427 solid;
+ 	background-color: white;
+ 	
 }
 
 .o {
 	width: 85px;
 	height: 85px;
-	background-image: url('../images/background1.png');
+	background-color: #E9E581;
  	vertical-align: center;
  	vertical-align: top;
- 	border: 30px double white;
  	border-radius: 50%;
 }
 
@@ -211,21 +178,33 @@ div.boardGame {
 	margin-left: 35px;
 	margin-top: 10px;
 	text-align: center;
-	border-radius: 5px;
+
 }
 
 .chatBody {
 	width: 340px;
 	height: 410px;
-	margin-top: 20%;
+	margin-top: 40%;
 	margin-left: 10px;
-	border-top: 10px solid teal;
-	border-left: 10px solid teal;
-	border-right: 10px solid teal;
-	border-radius: 5%;
+
 	background-image: url('../images/miss_olivia.png');
 	background-repeat: no-repeat;
 	background-position: center;
+
+}
+
+button.reset {
+	margin-top: 30%;
+	margin-left: 25%;
+	width: 100px;
+	background: #B71427;
+}
+
+button.clear {
+	margin-top: 30%;
+	margin-left: 25%;
+	width: 100px;
+	background-color: #B71427;
 
 }
 
@@ -240,9 +219,76 @@ div.boardGame {
 	background-color: #E9E581;
 	}
 
+
+
 	div#info {
-		width: 100%;
+		width: 110%;
 		height:100px;
+		margin-left: 0%;
+		margin-top: 5%;
+
 	}
+
+	#winner {
+		width: 30%;
+	}
+
+	button.clear {
+		width: 100%;
+		text-align: center;
+	
+	}
+
+	button.clear h5 {
+		color: white;
+		margin: 0 auto;
+	}
+
+	button.reset {
+		width: 100%;
+		text-align: center;
+
+	}
+
+	button.reset h5 {
+		color: white;
+		margin: 0 auto;
+
+	}
+
+	.empty {
+		border-bottom: 0px;
+	}
+
+	div.boardGame {
+		width: 100%;
+		height: 300px;
+	}
+
+	div#game {
+		width: 100%;
+		margin-left: -5%;
+		height: 400px;
+
+
+	}
+
+	.box {
+		vertical-align: top;
+		display: inline-block;
+		width: 75px;
+		height: 75px;
+		cursor: pointer;
+		background-color:black;
+		border: 20px double white;
+		border-color: white;
+		border-radius: 50%;
+		margin-top: 20px;
+	}
+
+
+
+
+
 
 }
