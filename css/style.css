@@ -1,74 +1,66 @@
-		HEADER {
+HEADER {
 	width: 100%;
 	height: 150px;
 	display: inline-block;
 }
 
 .headerOne{
-	float: left;
-	height: 150px;
-	width: 28%;
-	border-right: 10px solid black;
-	border-bottom: 10px solid black;
+	height: 100px;
+	width: 50%;
+	border-right: 3px solid #DE1B1B;
+	border-bottom: 3px solid #DE1B1B;
 	margin-left: 8px;
+	text-align: center;
 }
 
-
-.gameLogo {
-	background: url("../images/grid.png") center;
+div.xlogo {
+	background-image: url("../images/x.png");
+	background-repeat: no-repeat;
 	width: 80px;
 	height: 80px;
-	border-radius: 50%;
-	border: 28px solid #831618;
-	float: left; 
-	margin-left: 20px;
-	margin-top: 6px;
+	margin: 0 auto;
+	margin-left: 20%;
 }
 
-.gameLogo:hover {
-	border: 28px solid black;
+
+
+
+
+div.gridlogo {
+	background: url("../images/grid.png");
+	background-repeat: no-repeat;
+	width: 80px;
+	height: 80px;
+	margin-left: 5%;
+	
+	
 }
 
-#gameNameOne, #gameNameTwo, #gameNameThree {
-	margin-left: 26px;
-}
 
-#gameNameOne {
+
+
+#tic {
 	color:#831618;
 	margin-top: 6px;
 }
 	
 
-#gameNameTwo {
+#tac{
 	color: black;
-	margin-top: -10px;
+	margin-top: 10px;
 	
 }
 
-#gameNameThree {
+#toe {
 	color: #D2D2D3;
-	margin-top: -12px;
+	margin-top: 12px;
 }
 
-.xlogo {
-	background-image: url("../images/x.png");
-	width: 80px;
-	height: 80px;
-	float: left;
-	border: 28px solid black;
-	border-radius: 10%;
-	margin-left: 10px;
-	margin-right: -20px;
-	margin-top: 6px;
-}
 
-.xlogo:hover {
-	border: 28px solid #831618;
-}
 
 .headerTwo{
 	float: left;
-	width: 70%;
+	width: 50%;
 	height: 150px;
 	display: inline-block;
 	background: url('../images/background1.png');

@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>Dialy Tic Tac Toe</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		
 		<script type="text/javascript" src = "js/angular.js"></script>
 		<script type="text/javascript" src="js/firebase.js"></script>
@@ -13,18 +14,19 @@
 
 	</head>
 
-	<body ng-controller = "TicTacToeController as gameCtrl">
+	<body ng-controller = "TicTacToeController as gameCtrl" class="container">
 
-		<header>
-			<section  class = "headerOne">
-				<div class = "gameLogo">
-					<h5 id= "gameNameOne">Tic.</h5>
-					<h5 id= "gameNameTwo">Tac.</h5>
-					<h5 id= "gameNameThree">Toe.</h5>
+		<header class="row">
+			<section  class = "headerOne col-md-6 col-xs-12">
+				<div class = "xlogo col-md-4 col-xs-4 "></div>
+				<div class="gridlogo col-md-4 col-xs-4">
+					<h5 id= "tic">Tic.</h5>
+					<h5 id= "tac">Tac.</h5>
+					<h5 id= "toe">Toe.</h5>
 				</div>
-				<div class = "xlogo"></div>
+				
 			</section>
-			<section class = "headerTwo">
+			<section class = "headerTwo col-md-6 col-xs-12">
 				<span class = "one"><h3>Player One</h3><h1>{{gameCtrl.game[0].player1Score}}</h1></span>
 				<span class = "two"><h3>Player Two</h3><h1>{{gameCtrl.game[0].player2Score}}</h1></span>
 
