@@ -4,10 +4,6 @@ HEADER {
 	display: inline-block;
 }
 
-.row {
-	width: 100%;
-}
-
 .headerOne{
 	height: 100px;
 	width: 50%;
@@ -37,8 +33,6 @@ div.gridlogo {
 	
 	
 }
-
-
 
 
 #tic {
@@ -100,44 +94,32 @@ strong {
 }
 
 
-MAIN {
+.row {
 	display: inline-block;
+	width: 100%;
 }
 
-#boardGame {
-	width: 800px;
+div.boardGame {
+	width: 50%;
 	height: 500px;
-	border-right: 10px solid black;
-	float: left;
 	display: inline-block;
+	margin-left: 5%;
+	margin-top: 5%;
 }
 
-#emptyDiv {
-	height:100px;
-	width: 40%;
-}
-
-MAIN {
-	display: inline-block;
-}
-
-SECTION {
-	width: 70%;
-	display: inline-block;
-}
 
 #info {
-	width: 300px;
+	width: 20%;
 	height: 505px;
 	float: left;
 	margin-top: 5px;
 	margin-left: 8px;
 	margin-right: -10px;
-	background-image: url('../images/background1.png');
+	background-color:#DE1B1B;
 }
 
 #winner {
-	width: 300px;
+	width: 200px;
 	height: 50px;
 	float: left;
 	text-align: center;
@@ -174,35 +156,30 @@ SECTION {
 
 }
 
-.chartBox {
-	width: 470px;
-	height: 500px;
-	display: inline-block;
-	border-left: 10px solid black;
-	margin-left: 10px;
-	padding: 5px;
-
+#game {
+	width: 60%;
+	margin-left: 15%;
 }
 
 .box {
 	vertical-align: top;
 	display: inline-block;
-	width: 125px;
-	height: 125px;
+	width: 85px;
+	height: 85px;
 	cursor: pointer;
 	float: left;
 	background-color:black;
 	border: 20px double white;
 	border-color: white;
 	border-radius: 50%;
-	margin-left: 23px;
+	margin-left: 5%;
 	margin-top: 20px;
 
 }
 
 .x {
-	width: 125px;
-	height: 125px;
+	width: 85px;
+	height: 85px;
 	border-radius: 10%;
  	vertical-align: center;
  	vertical-align: top;
@@ -211,8 +188,8 @@ SECTION {
 }
 
 .o {
-	width: 125px;
-	height: 125px;
+	width: 85px;
+	height: 85px;
 	background-image: url('../images/background1.png');
  	vertical-align: center;
  	vertical-align: top;
@@ -220,8 +197,8 @@ SECTION {
  	border-radius: 50%;
 }
 
-#chatWindow {
-	width: 400px;
+.chatWindow {
+	width: 10%;
 	height: 400px;
 	float: left;
 }
@@ -261,6 +238,11 @@ SECTION {
 	width: 110%;
 	height: 100px;
 	background-color: #E9E581;
+	}
+
+	div#info {
+		width: 100%;
+		height:100px;
 	}
 
 }

@@ -37,37 +37,36 @@
 		
 		</header>
 
-			<div class="empty"></div>
+			<div class="empty col-md-12 col-xs-12"></div>
 		
-		<main>
-
-			<section id = "boardGame">
+		<main class="row">
 				
-				<div id = "info">
-					<aside id = "winner">
-					<h2>{{gameCtrl.game[0].message}}</h2>
-					</aside>
-					<div class = "reset">
-					<button id = "resetButton" ng-click = "gameCtrl.scoreReset()"><h2>Reset Score</h2></button>
-					<button id = "clearButton" ng-click= "gameCtrl.clearBoard()"><h2>Clear Board</button></h2>
-					</div>
-					
-				</div>
-
-
-				<div class = "chartBox">
-					<button class= "box" ng-repeat = "boxes in gameCtrl.grid" ng-class="boxes.select" ng-click="gameCtrl.boxClick($index)"></button>
+			<div id = "info" class="col-md-2 col-xs-12">
+				<div id = "winner">
+				<h2>{{gameCtrl.game[0].message}}</h2>
 				</div>
 				
-			</section>
+				<button id = "resetButton" ng-click = "gameCtrl.scoreReset()"><h2>Reset Score</h2></button>
+				<button id = "clearButton" ng-click= "gameCtrl.clearBoard()"><h2>Clear Board</button></h2>
+				</div>
+				
+			</div>
 
-			<aside id = "chatWindow">
+
+			<div class = "boardGame col-md-6 col-xs-12">
+				<div id="game">
+				<button class= "box" ng-repeat = "boxes in gameCtrl.grid" ng-class="boxes.select" ng-click="gameCtrl.boxClick($index)"></button>
+				</div>
+			</div>
+				
+
+			<div class = "chatWindow col-md-2 col-xs-12">
 				<span class = "chatTittle"><h1>Welcome</h1></span>
 				<ul class = "chatBody">
 						
 				</ul>
 				
-			</aside>
+			</div>
 		</main>
 
 
