@@ -12,7 +12,7 @@ div.xlogo {
 	width: 80px;
 	height: 80px;
 	margin: 0 auto;
-	margin-left: 20%;
+	margin-left: 25%;
 }
 
 
@@ -51,6 +51,7 @@ div.gridlogo {
 
 .headerTwo{
 	margin-top: 2%;
+	margin-left: -10%;
 	width: 100%;
 	height: 100px;
 	background-color: #E9E581;
@@ -98,7 +99,7 @@ div.boardGame {
 	width: 50%;
 	height: 500px;
 	display: inline-block;
-	margin-left: 15%;
+	margin-left: 5%;
 	margin-top: 5%;
 }
 
@@ -108,7 +109,7 @@ div.boardGame {
 	height: 400px;
 	float: left;
 	margin-top: 3%;
-	margin-left: 10%;
+	margin-left: 13%;
 	background-color:#404040;
 }
 
@@ -126,7 +127,7 @@ div.boardGame {
 
 #game {
 	width: 60%;
-	margin-left: 15%;
+	margin-left: 25%;
 }
 
 .box {
@@ -217,6 +218,7 @@ button.clear {
 	width: 110%;
 	height: 100px;
 	background-color: #E9E581;
+	margin-left: 0%;
 	}
 
 
@@ -263,6 +265,7 @@ button.clear {
 	div.boardGame {
 		width: 100%;
 		height: 300px;
+		margin-left: 20%;
 	}
 
 	div#game {
