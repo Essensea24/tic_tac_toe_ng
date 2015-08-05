@@ -65,10 +65,12 @@ angular
  			self.grid[i].select = "empty";
  			self.grid.$save(i);
  		}
+
  	}
 
  	
  	function boxClick(i) {
+
  		if (self.game[0].turn <= 9 && self.game[0].winner == false){
 	 		if (self.grid[i].select == 'empty' 
 	 			&& self.game[0].turn % 2 == 0) {
